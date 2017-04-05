@@ -3,8 +3,8 @@
 #!/usr/bin/env ruby -w
 require "socket"
 class Server
-  def initialize( port, ip )
-    @server = TCPServer.open( ip, port )
+  def initialize
+    @server = TCPServer.open(3000)
     @connections = Hash.new
     @rooms = Hash.new
     @clients = Hash.new
@@ -44,4 +44,4 @@ class Server
   end
 end
 
-Server.new( 3000, "34.205.134.70" )
+Server.new
